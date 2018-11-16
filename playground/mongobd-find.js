@@ -22,45 +22,10 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp',{ useNewUrlParser: true 
 
   db.collection('Users').find({age:21}).count().then((count)=>{
     console.log('Users');
-    console.log(JSON.stringify(count,undefined,2));
+    console.log(count);
   },(error)=>{
       console.log(error);
   });
-
-
-
-  // db.collection('Users').insertOne(
-  //   user,(error,result)=>{
-  //     if(error){
-  //       return console.log('Unable to insert todo',error);
-  //     }
-  //     console.log(JSON.stringify(result.ops,undefined,2));
-  //   }
-  // );
-
-  /*db.collection('Todos').insertOne({
-    text: 'Something to do',
-    completed: false
-  },(error,result)=>{
-    if(error){
-    return console.log('Unable to insert todo',error);
-    }
-    console.log(JSON.stringify(result.ops,undefined,2));
-  });*/
-
-/*  db.collection('Users').insertOne({
-    name: 'Felipe',
-    age: 27,
-    location: 'Pelotas'
-  },(error,result)=>{
-    if(error){
-      return console.log('Unable to insert to do',error);
-    }
-    console.log(JSON.stringify(result.ops,undefined,2));
-    console.log(result.ops[0]._id.getTimestamp());
-  });*/
-
-  //db.collection('User')inse
 
   client.close();
 });
