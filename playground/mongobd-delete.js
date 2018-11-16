@@ -3,7 +3,7 @@
 const MongoClient = require('mongodb').MongoClient;
 
 
-MongoClient.connect('mongodb://localhost:27017/TodoApp',{ useNewUrlParser: true },(error,client)=>{
+MongoClient.connect('mongodb://localhost:27017/mongodb-banco',{ useNewUrlParser: true },(error,client)=>{
   if(error){
     return console.log('Unable to connect to MongoDB server',error);
   }
@@ -13,7 +13,7 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp',{ useNewUrlParser: true 
   // Delete Many
   db.collection('Users').deleteMany({age:21}).then((result)=>{
     console.log('Delete Many Users');
-    console.log(`Deletados: ${docs.result.n}`);
+    console.log(`Deletados: ${result.result.n}`);
   },(error)=>{
     console.log(error);
   });

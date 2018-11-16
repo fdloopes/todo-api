@@ -6,7 +6,7 @@ const {MongoClient, ObjectID} = require('mongodb');
 
 var user = {name:'Paula',age:21};
 
-MongoClient.connect('mongodb://localhost:27017/TodoApp',{ useNewUrlParser: true },(error,client)=>{
+MongoClient.connect('mongodb://localhost:27017/mongodb-banco',{ useNewUrlParser: true },(error,client)=>{
   if(error){
     return console.log('Unable to connect to MongoDB server',error);
   }
