@@ -11,6 +11,11 @@ var User = mongoose.model('User',{
     trim:true,
     required:true,
     minlength:1
+  },senha:{
+    type: String,
+    trim: true,
+    required: true,
+    minlength:6
   }
 });
 

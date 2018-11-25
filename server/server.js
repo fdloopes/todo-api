@@ -29,6 +29,22 @@ app.get('/todos',(req,res)=>{
   });
 });
 
+app.delete('/todos',(req,res)=>{
+  Todo.deleteOne({
+    text:req.body.text
+  }).then((result)=>{
+    if(result.n>0){
+      res.send('Informação deletada');
+    }else{
+      res.send('text not find');
+    }
+  },(error)=>{
+    res.status(400).send(error);
+  });
+});
+
+
+
 app.listen(3000, ()=>{
   console.log('Started on port 3000');
 });
