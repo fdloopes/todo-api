@@ -12,6 +12,8 @@ const todos = [{
   text:'Second text todo'
 },{
   text:'Thirty text todo'
+},{
+  text:'Four text todo'
 }];
 
 beforeEach((done) => {
@@ -46,7 +48,7 @@ describe('POST /todos',()=>{
         return done(error);
       }
       Todo.find().then((todos)=>{
-        expect(todos.length).toBe(3);
+        expect(todos.length).toBe(4);
         done();
       }).catch((error)=>{
         done(error);
@@ -57,8 +59,8 @@ describe('POST /todos',()=>{
 
 describe('GET /todos',()=>{
   it('should get all todos', (done) => {
-    request(app).get('/todos').expect((res)=>{
-      expect(res.body.todos.length).toBe(3);
+    request(app).get('/todos').expect(200).expect((res)=>{
+      expect(res.body.todos.length).toBe(4);
     }).end(done);
   });
 });
