@@ -6,6 +6,10 @@ const {User} = require('./../server/models/user');
 
 var id = "5bef14a8e2a6491d824c1e78";
 
+if(!ObjectID.isValid(id)){
+  console.log('Object not valid');
+}
+
 User.findById(id).then((user)=>{
   if(!user){
     console.log('User not found');
@@ -20,9 +24,7 @@ User.findById(id).then((user)=>{
 //   console.log('User by id update',user);
 // }).catch((e)=> console.log(e.message));
 
-// if(!ObjectID.isValid(id)){
-//   console.log('Object not valid');
-// }
+
 //
 // Todo.find({
 //   _id: id
